@@ -1,0 +1,1481 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPHcBy/ZXpe1s5SuDvPXxXd",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "ir",
+      "display_name": "R"
+    },
+    "language_info": {
+      "name": "R"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/poojaarumgavelan-hash/Pooja-arumuga-velan/blob/main/R%20program%20\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "# Create a list.\n",
+        "list1 <- list(c(2,5,3),21.3,sin)\n",
+        "# Print the list.\n",
+        "print(list1)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sx8gdHGfVW-0",
+        "outputId": "0255ee95-f33c-4ea6-ea40-c4e6916f1ddd"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[1]]\n",
+            "[1] 2 5 3\n",
+            "\n",
+            "[[2]]\n",
+            "[1] 21.3\n",
+            "\n",
+            "[[3]]\n",
+            "function (x)  .Primitive(\"sin\")\n",
+            "\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Create a matrix.\n",
+        "M = matrix( c('a','a','b','c','b','a'), nrow = 2, ncol = 3, byrow = TRUE)\n",
+        "print(M)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "f1OBBKU7VoPA",
+        "outputId": "c1fe5ae8-1b78-4afd-e23c-e8a0c29dfe30"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "     [,1] [,2] [,3]\n",
+            "[1,] \"a\"  \"a\"  \"b\" \n",
+            "[2,] \"c\"  \"b\"  \"a\" \n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Create an array.\n",
+        "a <- array(c('green','yellow'),dim = c(3,3,2))\n",
+        "print(a)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "lscx0hd5V9jU",
+        "outputId": "46b49c87-1511-443f-d666-56df9422a11f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            ", , 1\n",
+            "\n",
+            "     [,1]     [,2]     [,3]    \n",
+            "[1,] \"green\"  \"yellow\" \"green\" \n",
+            "[2,] \"yellow\" \"green\"  \"yellow\"\n",
+            "[3,] \"green\"  \"yellow\" \"green\" \n",
+            "\n",
+            ", , 2\n",
+            "\n",
+            "     [,1]     [,2]     [,3]    \n",
+            "[1,] \"yellow\" \"green\"  \"yellow\"\n",
+            "[2,] \"green\"  \"yellow\" \"green\" \n",
+            "[3,] \"yellow\" \"green\"  \"yellow\"\n",
+            "\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Create a vector.\n",
+        "apple_colors <- c('green','green','yellow','red','red','red','green')\n",
+        "# Create a factor object.\n",
+        "factor_apple <- factor(apple_colors)\n",
+        "# Print the factor.\n",
+        "print(factor_apple)\n",
+        "print(nlevels(factor_apple))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3vEqB2X7Vuuj",
+        "outputId": "b68e6eb3-f422-4848-a88e-e1505a0d8c0e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1] green  green  yellow red    red    red    green \n",
+            "Levels: green red yellow\n",
+            "[1] 3\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Create the data frame.\n",
+        "BMI <-\n",
+        "data.frame(\n",
+        "gender = c(\"Male\", \"Male\",\"Female\"),\n",
+        "height = c(152, 171.5, 165),\n",
+        "weight = c(81,93, 78),\n",
+        "Age = c(42,38,26)\n",
+        ")\n",
+        "print(BMI)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ah6GtF41WGDM",
+        "outputId": "f292bd9f-ce9a-4e36-b980-66a832f8762f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "  gender height weight Age\n",
+            "1   Male  152.0     81  42\n",
+            "2   Male  171.5     93  38\n",
+            "3 Female  165.0     78  26\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Assignment using equal operator.\n",
+        "var.1 = c(0,1,2,3)\n",
+        "# Assignment using leftward operator.\n",
+        "var.2 <- c(\"learn\",\"R\")\n",
+        "# Assignment using rightward operator.\n",
+        "c(TRUE,1) -> var.3\n",
+        "print(var.1)\n",
+        "cat (\"var.1 is \", var.1 ,\"\\n\")\n",
+        "cat (\"var.2 is \", var.2 ,\"\\n\")\n",
+        "cat (\"var.3 is \", var.3 ,\"\\n\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "a0cGb-GkWNNU",
+        "outputId": "1e0f9da5-5cd2-4049-963b-13be6200f7b8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1] 0 1 2 3\n",
+            "var.1 is  0 1 2 3 \n",
+            "var.2 is  learn R \n",
+            "var.3 is  1 1 \n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "var_x <- \"Hello\"\n",
+        "cat(\"The class of var_x is \",class(var_x),\"\\n\")\n",
+        "var_x <- 34.5\n",
+        "cat(\" Now the class of var_x is \",class(var_x),\"\\n\")\n",
+        "var_x <- 27L\n",
+        "cat(\" Next the class of var_x becomes \",class(var_x),\"\\n\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "j_f5skfpWV8s",
+        "outputId": "8b54e303-a562-4b93-8699-c938ed8fe141"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "The class of var_x is  character \n",
+            " Now the class of var_x is  numeric \n",
+            " Next the class of var_x becomes  integer \n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# In Python, you can delete a variable using `del`.\n",
+        "# However, variables defined in other cells are not directly accessible for deletion in a new cell's scope.\n",
+        "# To clear all variables in the current interactive session, you would typically restart the runtime.\n",
+        "# If you need to manage variables within a single cell's execution, you would define and delete them within that cell."
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 159
+        },
+        "id": "61yBq12xWlp0",
+        "outputId": "ab20bb2b-bb06-4db9-fbd3-c8e436ac5832"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "ERROR",
+          "evalue": "Error in parse(text = input): <text>:3:5: unexpected symbol\n2: print(var.3)\n3: All the\n       ^\n",
+          "traceback": [
+            "Error in parse(text = input): <text>:3:5: unexpected symbol\n2: print(var.3)\n3: All the\n       ^\nTraceback:\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "v <- c( 2,5.5,6)\n",
+        "t <- c(8, 3, 4)\n",
+        "print(v+t)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "KU-PqKmSW_5s",
+        "outputId": "bafb3901-f5d4-4173-e71d-e7551024dcf5"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1] 10.0  8.5 10.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "v <- c( 2,5.5,6)\n",
+        "t <- c(8, 3, 4)\n",
+        "print(v-t)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "6yNwfaIqXJc1",
+        "outputId": "852062b1-130d-428c-e507-97f613e5de88"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1] -6.0  2.5  2.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "v <- c( 2,5.5,6)\n",
+        "t <- c(8, 3, 4)\n",
+        "print(v*t)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-r3T_ahcXT4s",
+        "outputId": "bff484fc-17ae-4b9f-d057-bec9a31655c7"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1] 16.0 16.5 24.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "v <- c( 2,5.5,6)\n",
+        "t <- c(8, 3, 4)\n",
+        "print(v/t)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "BGBwdccKYJco",
+        "outputId": "c50cc417-0db9-4952-c2ac-93889ea17298"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1] 0.250000 1.833333 1.500000\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "v <- c( 2,5.5,6)\n",
+        "t <- c(8, 3, 4)\n",
+        "print(v%%t)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ysGjsIXKYNUg",
+        "outputId": "4450a135-5072-4e54-913d-2edb7daaf883"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1] 2.0 2.5 2.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "v <- c( 2,5.5,6)\n",
+        "t <- c(8, 3, 4)\n",
+        "print(v%/%t)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nCfS6a5xYavE",
+        "outputId": "e7adee02-b462-465e-dec6-d67c6463112d"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1] 0 1 1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "v <- c( 2,5.5,6)\n",
+        "t <- c(8, 3, 4)\n",
+        "print(v^t)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "LnlwkQnVYfzQ",
+        "outputId": "2d78250b-cdaf-42cc-810f-6cd2e262016a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1]  256.000  166.375 1296.000\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "v <- c(2,5.5,6,9)\n",
+        "t <- c(8,2.5,14,9)\n",
+        "print(v>t)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "5qtYkSdXYjdv",
+        "outputId": "90b85eef-5bcf-40ed-dd57-d7f2a18ed8b5"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1] FALSE  TRUE FALSE FALSE\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "v <- c(2,5.5,6,9)\n",
+        "t <- c(8,2.5,14,9)\n",
+        "print(v < t)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "m7ty_FFgYm6Z",
+        "outputId": "e845bad5-076e-4df7-f563-1965fdd28cc0"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1]  TRUE FALSE  TRUE FALSE\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "v <- c(2,5.5,6,9)\n",
+        "t <- c(8,2.5,14,9)\n",
+        "print(v == t)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-cIP8dvbY25Q",
+        "outputId": "1b8058b6-fb55-451f-81fc-783aacc3718a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1] FALSE FALSE FALSE  TRUE\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "v <- c(2,5.5,6,9)\n",
+        "t <- c(8,2.5,14,9)\n",
+        "print(v>=t)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "vJjxcdGsY97C",
+        "outputId": "81da814e-0530-4a1a-999d-39f6ebf2a98e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1] FALSE  TRUE FALSE  TRUE\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "v <- c(2,5.5,6,9)\n",
+        "t <- c(8,2.5,14,9)\n",
+        "print(v<=t)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "cGkC8UN1ZBGy",
+        "outputId": "4bc98a60-5a9c-49f9-c0a1-17fbcfda7453"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1]  TRUE FALSE  TRUE  TRUE\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "v <- c(2,5.5,6,9)\n",
+        "t <- c(8,2.5,14,9)\n",
+        "print(v!=t)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "DIr4y5luZF3H",
+        "outputId": "1e901cc3-2fad-4d0b-bcce-389c15a4d937"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1]  TRUE  TRUE  TRUE FALSE\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "v <- c(3,1,TRUE,2+3i)\n",
+        "t <- c(4,1,FALSE,2+3i)\n",
+        "print(v&t)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4Hvh-bQwZc1F",
+        "outputId": "78ede91e-2995-43af-cb80-f200243b8a4b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1]  TRUE  TRUE FALSE  TRUE\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "v <- c(3,0,TRUE,2+2i)\n",
+        "t <- c(4,0,FALSE,2+3i)\n",
+        "print(v|t)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "mAN3_r97Zgsq",
+        "outputId": "1f0eb5df-ec04-4a72-c701-9c1e1973a1fc"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1]  TRUE FALSE  TRUE  TRUE\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "v <- c(3,0,TRUE,2+2i)\n",
+        "print(!v)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "GvSO55m6ZjWB",
+        "outputId": "99948753-782b-42dd-9519-029b82dba072"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1] FALSE  TRUE FALSE FALSE\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "v <- c(3,0,TRUE,2+2i)\n",
+        "t <- c(1,3,TRUE,2+3i)\n",
+        "print(v&&t)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 474
+        },
+        "id": "Yms9iqovZmGh",
+        "outputId": "4a1af19d-d7c9-4eaa-e80b-c34adeee1415"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "ERROR",
+          "evalue": "Error in v && t: 'length = 4' in coercion to 'logical(1)'\n",
+          "traceback": [
+            "Error in v && t: 'length = 4' in coercion to 'logical(1)'\nTraceback:\n",
+            "1. .handleSimpleError(function (cnd) \n . {\n .     watcher$capture_plot_and_output()\n .     cnd <- sanitize_call(cnd)\n .     watcher$push(cnd)\n .     switch(on_error, continue = invokeRestart(\"eval_continue\"), \n .         stop = invokeRestart(\"eval_stop\"), error = NULL)\n . }, \"'length = 4' in coercion to 'logical(1)'\", base::quote(v && \n .     t))"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "v <- c(0,0,TRUE,2+2)\n",
+        "t <- c(0,3,TRUE,2+3)\n",
+        "print(v||t)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 474
+        },
+        "id": "LxkiXKtAaV-b",
+        "outputId": "cce1dc3d-b8ad-4912-cede-61418e0d229e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "ERROR",
+          "evalue": "Error in v || t: 'length = 4' in coercion to 'logical(1)'\n",
+          "traceback": [
+            "Error in v || t: 'length = 4' in coercion to 'logical(1)'\nTraceback:\n",
+            "1. .handleSimpleError(function (cnd) \n . {\n .     watcher$capture_plot_and_output()\n .     cnd <- sanitize_call(cnd)\n .     watcher$push(cnd)\n .     switch(on_error, continue = invokeRestart(\"eval_continue\"), \n .         stop = invokeRestart(\"eval_stop\"), error = NULL)\n . }, \"'length = 4' in coercion to 'logical(1)'\", base::quote(v || \n .     t))"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "v1 <- 8\n",
+        "v2 <- 12\n",
+        "t <- 1:10\n",
+        "print(v1 %in% t)\n",
+        "print(v2 %in% t)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sPsuKe2CZqZy",
+        "outputId": "df307545-32c8-4432-e788-a852583436b8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1] TRUE\n",
+            "[1] FALSE\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "v1 <- c(3,1,TRUE,2+3i)\n",
+        "v2 <<- c(3,1,TRUE,2+3i)\n",
+        "v3 = c(3,1,TRUE,2+3i)\n",
+        "print(v1)\n",
+        "print(v2)\n",
+        "print(v3)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3E-YRwgwaqif",
+        "outputId": "db721d2f-6263-4998-96c8-f23ebf5b4660"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1] 3+0i 1+0i 1+0i 2+3i\n",
+            "[1] 3+0i 1+0i 1+0i 2+3i\n",
+            "[1] 3+0i 1+0i 1+0i 2+3i\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "c(3,1,TRUE,2+3i) -> v1\n",
+        "c(3,1,TRUE,2+3i) ->> v2\n",
+        "print(v1)\n",
+        "print(v2)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "iiCKkY30bLoi",
+        "outputId": "4338b376-b705-460c-d371-4563b9e0a5eb"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1] 3+0i 1+0i 1+0i 2+3i\n",
+            "[1] 3+0i 1+0i 1+0i 2+3i\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "v <- 2:8\n",
+        "print(v)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "x3rOozQJbL6C",
+        "outputId": "e0b42c3b-ef98-49a8-be44-f4d76bfc64c8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1] 2 3 4 5 6 7 8\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "v1 <- 8\n",
+        "v2 <- 12\n",
+        "t <- 1:10\n",
+        "print(v1 %in% t)\n",
+        "print(v2 %in% t)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kNPPu4nFbeIQ",
+        "outputId": "0bce8c89-3344-4328-8b9b-84c104d2a46b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1] TRUE\n",
+            "[1] FALSE\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "M = matrix( c(2,6,5,1,10,4),\n",
+        "nrow = 2,ncol = 3,byrow =\n",
+        "TRUE)\n",
+        "t = M %*% t(M)\n",
+        "print(t)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4eY-3YyEbmNS",
+        "outputId": "3bf75971-ca71-42f6-f491-4bae20876c7a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "     [,1] [,2]\n",
+            "[1,]   65   82\n",
+            "[2,]   82  117\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x <- 30L\n",
+        "if(is.integer(x)) {\n",
+        " print(\"X is an Integer\")\n",
+        "}"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "vcOh6ud1bp6s",
+        "outputId": "1ffa4a53-eee5-4aba-802e-417722a391ec"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1] \"X is an Integer\"\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x <- 10\n",
+        "y <- 20\n",
+        "z <- 30\n",
+        "if(x >= y) {\n",
+        " if(x >= z)\n",
+        " cat(x , \" is the largest.\")\n",
+        " else\n",
+        " cat(z , \" is the largest.\")\n",
+        "} else {\n",
+        " if(y >= z)\n",
+        " cat(y , \" is the largest.\")\n",
+        " else\n",
+        " cat(z , \" is the largest.\")\n",
+        "}"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Zs6vZHTnb5JL",
+        "outputId": "cd191c56-27cb-420b-f359-75c6fa14b23b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "30  is the largest."
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x <- switch(\n",
+        " \"apple\",\n",
+        " apple = \"A red fruit\",\n",
+        " banana = \"A yellow fruit\",\n",
+        " orange = \"A citrus fruit\"\n",
+        " )\n",
+        "print(x)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xt1ww8IOcDY-",
+        "outputId": "0e8ccea0-042f-4a07-e243-feac8dc00592"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1] \"A red fruit\"\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "v <- LETTERS[1:4]\n",
+        "i <- 0\n",
+        "repeat {\n",
+        " print(v[i])\n",
+        " i<- i+1\n",
+        " if(i> 4)\n",
+        "break\n",
+        " }\n",
+        "}\n",
+        "When the above code is compiled and executed, it produces the following result −\n",
+        "[1] \"A\"\n",
+        "[1] \"B\"\n",
+        "[1] \"C\"\n",
+        "[1] \"D\""
+      ],
+      "metadata": {
+        "id": "_2GMMMuOcFFN"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "v <- LETTERS[1:4]\n",
+        "i <- 0\n",
+        "while(i < 5) {\n",
+        " print(v[i])\n",
+        " i<- i+1\n",
+        "}"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4pJ5u5lFclyY",
+        "outputId": "02dc86b9-085c-4c3b-d21e-aff8c3cf8999"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "character(0)\n",
+            "[1] \"A\"\n",
+            "[1] \"B\"\n",
+            "[1] \"C\"\n",
+            "[1] \"D\"\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "list1 <- list(a = 1:3, b = \"hello\", c = TRUE)\n",
+        "for (item in list1) {\n",
+        " print(item)\n",
+        "}"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "MibG1lzDcu2k",
+        "outputId": "5da415be-9ed3-4dba-e85b-37360a6b7649"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1] 1 2 3\n",
+            "[1] \"hello\"\n",
+            "[1] TRUE\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Elements are arranged sequentially by row.\n",
+        "M <- matrix(c(3:14), nrow = 4, byrow = TRUE)\n",
+        "print(M)\n",
+        "# Elements are arranged sequentially by column.\n",
+        "N <- matrix(c(3:14), nrow = 4, byrow = FALSE)\n",
+        "print(N)\n",
+        "# Define the column and row names.\n",
+        "rownames = c(\"row1\", \"row2\", \"row3\", \"row4\")\n",
+        "colnames = c(\"col1\", \"col2\", \"col3\")\n",
+        "P <- matrix(c(3:14), nrow = 4, byrow = TRUE, dimnames = list(rownames, colnames))\n",
+        "print(P)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nDw5qhMQczYb",
+        "outputId": "5ed7b68e-7b8d-4db6-e16f-5f1d62d2025a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "     [,1] [,2] [,3]\n",
+            "[1,]    3    4    5\n",
+            "[2,]    6    7    8\n",
+            "[3,]    9   10   11\n",
+            "[4,]   12   13   14\n",
+            "     [,1] [,2] [,3]\n",
+            "[1,]    3    7   11\n",
+            "[2,]    4    8   12\n",
+            "[3,]    5    9   13\n",
+            "[4,]    6   10   14\n",
+            "     col1 col2 col3\n",
+            "row1    3    4    5\n",
+            "row2    6    7    8\n",
+            "row3    9   10   11\n",
+            "row4   12   13   14\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Define the column and row names.\n",
+        "rownames = c(\"row1\", \"row2\", \"row3\", \"row4\")\n",
+        "colnames = c(\"col1\", \"col2\", \"col3\")\n",
+        "# Create the matrix.\n",
+        "P <- matrix(c(3:14), nrow = 4, byrow = TRUE, dimnames = list(rownames, colnames))\n",
+        "# Access the element at 3rd column and 1st row.\n",
+        "print(P[1,3])\n",
+        "# Access the element at 2nd column and 4th row.\n",
+        "print(P[4,2])\n",
+        "# Access only the 2nd row.\n",
+        "print(P[2,])\n",
+        "# Access only the 3rd column.\n",
+        "print(P[,3])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "BVxYF0sVc-j2",
+        "outputId": "f9f8ac1f-1465-46dc-e590-caef7c3ad4f7"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1] 5\n",
+            "[1] 13\n",
+            "col1 col2 col3 \n",
+            "   6    7    8 \n",
+            "row1 row2 row3 row4 \n",
+            "   5    8   11   14 \n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Create two 2x3 matrices.\n",
+        "matrix1 <- matrix(c(3, 9, -1, 4, 2, 6), nrow = 2)\n",
+        "print(matrix1)\n",
+        "matrix2 <- matrix(c(5, 2, 0, 9, 3, 4), nrow = 2)\n",
+        "print(matrix2)\n",
+        "# Add the matrices.\n",
+        "result <- matrix1 + matrix2\n",
+        "cat(\"Result of addition\",\"\\n\")\n",
+        "print(result)\n",
+        "# Subtract the matrices\n",
+        "result <- matrix1 - matrix2\n",
+        "cat(\"Result of subtraction\",\"\\n\")\n",
+        "print(result)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "JMRd93aWdLhF",
+        "outputId": "9e4468c3-3130-4fb5-bbda-c9edba84be09"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "     [,1] [,2] [,3]\n",
+            "[1,]    3   -1    2\n",
+            "[2,]    9    4    6\n",
+            "     [,1] [,2] [,3]\n",
+            "[1,]    5    0    3\n",
+            "[2,]    2    9    4\n",
+            "Result of addition \n",
+            "     [,1] [,2] [,3]\n",
+            "[1,]    8   -1    5\n",
+            "[2,]   11   13   10\n",
+            "Result of subtraction \n",
+            "     [,1] [,2] [,3]\n",
+            "[1,]   -2   -1   -1\n",
+            "[2,]    7   -5    2\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Create two 2x3 matrices.\n",
+        "matrix1 <- matrix(c(3, 9, -1, 4, 2, 6), nrow = 2)\n",
+        "print(matrix1)\n",
+        "matrix2 <- matrix(c(5, 2, 0, 9, 3, 4), nrow = 2)\n",
+        "print(matrix2)\n",
+        "# Multiply the matrices.\n",
+        "result <- matrix1 * matrix2\n",
+        "cat(\"Result of multiplication\",\"\\n\")\n",
+        "print(result)\n",
+        "# Divide the matrices\n",
+        "result <- matrix1 / matrix2\n",
+        "cat(\"Result of division\",\"\\n\")\n",
+        "print(result)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "6SaTPZvhdVAo",
+        "outputId": "2bf06feb-266c-4060-9f7d-fb13121c1bf3"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "     [,1] [,2] [,3]\n",
+            "[1,]    3   -1    2\n",
+            "[2,]    9    4    6\n",
+            "     [,1] [,2] [,3]\n",
+            "[1,]    5    0    3\n",
+            "[2,]    2    9    4\n",
+            "Result of multiplication \n",
+            "     [,1] [,2] [,3]\n",
+            "[1,]   15    0    6\n",
+            "[2,]   18   36   24\n",
+            "Result of division \n",
+            "     [,1]      [,2]      [,3]\n",
+            "[1,]  0.6      -Inf 0.6666667\n",
+            "[2,]  4.5 0.4444444 1.5000000\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Create two vectors of different lengths.\n",
+        "vector1 <- c(5,9,3)\n",
+        "vector2 <- c(10,11,12,13,14,15)\n",
+        "# Take these vectors as input to the array.\n",
+        "result <- array(c(vector1,vector2),dim = c(3,3,2))\n",
+        "print(result)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "GWa0bZjteXSh",
+        "outputId": "6cdd4636-dd41-4895-ac01-8af1b3e37464"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            ", , 1\n",
+            "\n",
+            "     [,1] [,2] [,3]\n",
+            "[1,]    5   10   13\n",
+            "[2,]    9   11   14\n",
+            "[3,]    3   12   15\n",
+            "\n",
+            ", , 2\n",
+            "\n",
+            "     [,1] [,2] [,3]\n",
+            "[1,]    5   10   13\n",
+            "[2,]    9   11   14\n",
+            "[3,]    3   12   15\n",
+            "\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Create two vectors of different lengths.\n",
+        "vector1 <- c(5,9,3)\n",
+        "vector2 <- c(10,11,12,13,14,15)\n",
+        "column.names <- c(\"COL1\",\"COL2\",\"COL3\")\n",
+        "row.names <- c(\"ROW1\",\"ROW2\",\"ROW3\")\n",
+        "matrix.names <- c(\"Matrix1\",\"Matrix2\")\n",
+        "# Take these vectors as input to the array.\n",
+        "result <- array(c(vector1,vector2),dim = c(3,3,2),dimnames = list(row.names,column.names,\n",
+        " matrix.names))\n",
+        "print(result)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "DSTzNN8aeAKC",
+        "outputId": "afd30763-ae10-4934-9b2b-5f7f9d814b86"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            ", , Matrix1\n",
+            "\n",
+            "     COL1 COL2 COL3\n",
+            "ROW1    5   10   13\n",
+            "ROW2    9   11   14\n",
+            "ROW3    3   12   15\n",
+            "\n",
+            ", , Matrix2\n",
+            "\n",
+            "     COL1 COL2 COL3\n",
+            "ROW1    5   10   13\n",
+            "ROW2    9   11   14\n",
+            "ROW3    3   12   15\n",
+            "\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "vector1 <- c(5,9,3)\n",
+        "vector2 <- c(10,11,12,13,14,15)\n",
+        "column.names <- c(\"COL1\",\"COL2\",\"COL3\")\n",
+        "row.names <- c(\"ROW1\",\"ROW2\",\"ROW3\")\n",
+        "matrix.names <- c(\"Matrix1\",\"Matrix2\")\n",
+        "# Take these vectors as input to the array.\n",
+        "result <- array(c(vector1,vector2),dim = c(3,3,2),dimnames = list(row.names,\n",
+        " column.names, matrix.names))\n",
+        "# Print the third row of the second matrix of the array.\n",
+        "print(result[3,,2])\n",
+        "# Print the element in the 1st row and 3rd column of the 1st matrix.\n",
+        "print(result[1,3,1])\n",
+        "# Print the 2nd Matrix.\n",
+        "print(result[,,2])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "YuwgXz3MecLp",
+        "outputId": "1ece8d42-74d0-4125-ca8d-100c048fa28a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "COL1 COL2 COL3 \n",
+            "   3   12   15 \n",
+            "[1] 13\n",
+            "     COL1 COL2 COL3\n",
+            "ROW1    5   10   13\n",
+            "ROW2    9   11   14\n",
+            "ROW3    3   12   15\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Create two vectors of different lengths.\n",
+        "vector1 <- c(5,9,3)\n",
+        "vector2 <- c(10,11,12,13,14,15)\n",
+        "# Take these vectors as input to the array.\n",
+        "array1 <- array(c(vector1,vector2),dim = c(3,3,2))\n",
+        "# Create two vectors of different lengths.\n",
+        "vector3 <- c(9,1,0)\n",
+        "vector4 <- c(6,0,11,3,14,1,2,6,9)\n",
+        "array2 <- array(c(vector1,vector2),dim = c(3,3,2))\n",
+        "# create matrices from these arrays.\n",
+        "matrix1 <- array1[,,2]\n",
+        "matrix2 <- array2[,,2]\n",
+        "# Add the matrices.\n",
+        "result <- matrix1+matrix2\n",
+        "print(result)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "AfreNQ_cgCAp",
+        "outputId": "08a71d5e-6c71-4329-e2e2-cdd8b48dfa5d"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "     [,1] [,2] [,3]\n",
+            "[1,]   10   20   26\n",
+            "[2,]   18   22   28\n",
+            "[3,]    6   24   30\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Create two vectors of different lengths.\n",
+        "vector1 <- c(5,9,3)\n",
+        "vector2 <- c(10,11,12,13,14,15)\n",
+        "# Take these vectors as input to the array.\n",
+        "new.array <- array(c(vector1,vector2),dim = c(3,3,2))\n",
+        "print(new.array)\n",
+        "# Use apply to calculate the sum of the rows across all the matrices.\n",
+        "result <- apply(new.array, c(1), sum)\n",
+        "print(result)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "p7VSUzVHgQkr",
+        "outputId": "58aab1b0-2a02-4333-99aa-c92a2126e5a2"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            ", , 1\n",
+            "\n",
+            "     [,1] [,2] [,3]\n",
+            "[1,]    5   10   13\n",
+            "[2,]    9   11   14\n",
+            "[3,]    3   12   15\n",
+            "\n",
+            ", , 2\n",
+            "\n",
+            "     [,1] [,2] [,3]\n",
+            "[1,]    5   10   13\n",
+            "[2,]    9   11   14\n",
+            "[3,]    3   12   15\n",
+            "\n",
+            "[1] 56 68 60\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
